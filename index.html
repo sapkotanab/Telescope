@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Azimuth at C</title>
+<link rel="manifest" href="./manifest.json">
 <style>
   :root {
     --ink: #1c2b24;
@@ -370,6 +371,15 @@ function loadSites(){
 }
 
 window.addEventListener('DOMContentLoaded', loadSites);
+
+// Register service worker for reliable offline use once installed to home screen
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(err => {
+      console.warn('Service worker registration failed:', err);
+    });
+  });
+}
 </script>
 </body>
 </html>
