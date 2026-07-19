@@ -1,0 +1,9 @@
+{
+  "name": "Azimuth at C",
+  "short_name": "Azimuth",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f2efe6",
+  "theme_color": "#3d5a4a",
+  "icons": []
+}
